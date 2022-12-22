@@ -1,10 +1,10 @@
 
-const fortune = require('./lib/fortune')
+
 const express = require('express')
 const expressHandlebars = require('express-handlebars').engine
 
 const app = express()
-
+const fortune = require('./lib/fortune')
 // konfiguracja silnika widoków Handlebars
 app.engine('handlebars', expressHandlebars({
   defaultLayout: 'main',
@@ -14,14 +14,6 @@ app.set('view engine', 'handlebars')
 app.use(express.static(__dirname + '/public'))
 
 const port = process.env.PORT || 3000
-
-// const fortunes = [
-//   "Pokonaj swoje lęki albo one pokonają ciebie.",
-//   "Rzeki potrzebują źródeł.",
-//   "Nie obawiaj się nieznanego.",
-//   "Oczekuj przyjemnej niespodzianki.",
-//   "Zawsze szukaj prostego rozwiązania.",
-// ]
 
 app.get('/', (req, res) => res.render('home'))
 
@@ -45,3 +37,4 @@ app.use((err, req, res, next) => {
 app.listen(port, () => console.log(
   `Express został uruchomiony pod adresem http://localhost:${port}; ` +
   `naciśnij Ctrl-C, aby zakończyć.`))
+  // console.log('This example is different!');tw
