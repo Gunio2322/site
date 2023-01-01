@@ -1,0 +1,15 @@
+ 
+{{#section 'head'}}
+  <!-- Chcemy, aby algorytmy Google zignorowały tę stronę -->
+  <meta name="robots" content="noindex">
+{{/section}}
+<h1>Strona testowa</h1>
+<p>Testujemy pewien skrypt.</p>
+{{#section 'scripts'}}
+  <script>
+
+  
+    document.querySelector('body')
+      .insertAdjacentHTML('beforeEnd', '<small>(skrypt działa!)</small>')
+  </script>
+{{/section}}
